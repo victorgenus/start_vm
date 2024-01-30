@@ -1,6 +1,6 @@
 ---
 - name: Start Proxmox VM
-  hosts: localhost
+  hosts: start_stop_vmware
   tasks:
     - name: Execute vmctl start command
       shell: vmctl start 197
