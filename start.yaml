@@ -3,5 +3,5 @@
   hosts: localhost
   tasks:
     - name: Execute vmctl start command
-      shell: vmctl start <VM_ID>
+      shell: vmctl start 197
       become: yes
