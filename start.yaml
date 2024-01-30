@@ -1,8 +1,11 @@
-# Stop container with force
-- proxmox:
-    vmid: 158
-    api_user: API@pve
-    api_password: 5b8f7130-adc7-43b9-9a2f-a980b21b46e5
-    api_host: node1
-    force: yes
-    state: stopped
+---
+- hosts: all
+  connection: ssh
+  become: True
+  gather_facts: False
+  tasks:
+   - name: Stop and disable firewalld.
+     service:
+       name: firewalld
+       state: start
+       enabled: False
