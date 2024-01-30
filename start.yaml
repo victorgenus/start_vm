@@ -1,10 +1,7 @@
 ---
-- name: Create start.yaml for Proxmox VM
+- name: Start Proxmox VM
   hosts: localhost
-  gather_facts: false
   tasks:
-    - name: Generate start.yaml
-      copy:
-        content: |
-          vmid: "{{ proxmox_vm_id }}"
-        dest: start.yaml
+    - name: Execute vmctl start command
+      shell: vmctl start <VM_ID>
+      become: yes
