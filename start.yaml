@@ -3,5 +3,5 @@
   hosts: 10.10.10.209
   tasks:
     - name: Execute vmctl start command
-      shell: vmctl start 197
+      shell: vmctl start {{ proxmox_vm_id }}
       become: yes
