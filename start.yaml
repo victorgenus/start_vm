@@ -4,8 +4,8 @@
   become: True
   gather_facts: False
   tasks:
-   - name: Stop and disable firewalld.
+   - name: Start and enable firewalld.
      service:
        name: firewalld
-       state: start
-       enabled: False
+       state: started
+       enabled: True
